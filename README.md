@@ -21,6 +21,7 @@
 k create deployment two --image=nginx --dry-run -o yaml
 k get deployment nginx --export -o yaml
 k replace -f first.yml
+# create from .yml
 k create -f first.yml 
 k get svc nginx
 k get deploy,pod,svc
@@ -32,6 +33,7 @@ k expose deployment/<name(?)>
 k get ep <name>
 
 k describe pod nginx-xxxx | grep Node:
+# get pod node info
 k get pod -o wide
 
 k scale deployment  nginx --replicas=<number of replicas>
@@ -52,4 +54,8 @@ k create deployment hog --image vish/stress
 k describe deployment hog
 
 k get deployment hog --export -o yaml > hog.yml
+
+# "Monitoring"
+(connect to node)
+"htop"
 ```
