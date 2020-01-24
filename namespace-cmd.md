@@ -77,5 +77,9 @@ k create configmap colors --from-literal=text=black --from-file=./favorite --fro
 k get configmaps
 k get configmaps -o yaml
 
+# apres upload du fichier simpleshell.yml
+k create -f shell-demo
+k exec -it shell-demo -- /bin/bash -c 'echo $ilike'
+
 
 ```

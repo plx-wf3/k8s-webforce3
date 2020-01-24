@@ -11,4 +11,4 @@ spec:
         valueFrom:
           configMapKeyRef:
             key: favorite
-            name: colors
+            name: colorscd
