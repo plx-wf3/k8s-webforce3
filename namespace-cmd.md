@@ -39,6 +39,18 @@ k get po -L system
 
 k describe po rs-one-xpcvw | grep Image
 
+# delete all IsolatedPod
+k delete po -l system=IsolatedPod
+
 rs-one metadata dans le fichier yaml
 ds-one metadata dans le fichier yaml
+
+# lance curl.yml dans le namespace kube-public
+k create -f curl.yaml -n kube-public
+k create -f frontend.yaml
+k create -f webapp-service.yaml
+chmod +x curl-test.sh
+./curl-test.sh
+# ouvrir un second shell pour modifier l'objet deployment k8s directed
+k edit deploy <nomDuDeploy>
 ```
