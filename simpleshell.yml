@@ -6,12 +6,20 @@ spec:
   containers:
   - name: nginx
     image: nginx
+    volumeMounts:
+      - mountPath: /etc/cars
+        name: car-vol
+  volumes:
+    - name: car-vol
+      configMap:
+        name: fast-car
 #    env:
 #      - name: ilike
 #        valueFrom:
 #          configMapKeyRef:
 #            key: favorite
 #            name: colors
-    envFrom:
-      - configMapRef:
-          name: colors
+
+#    envFrom:
+#      - configMapRef:
+#          name: colors
