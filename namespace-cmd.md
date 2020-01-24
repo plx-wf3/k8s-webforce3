@@ -51,6 +51,28 @@ k create -f frontend.yaml
 k create -f webapp-service.yaml
 chmod +x curl-test.sh
 ./curl-test.sh
-# ouvrir un second shell pour modifier l'objet deployment k8s directed
+# ouvrir un second shell pour modifier l'objet deployment k8s directed (pour voir le changement durant curl  -> v2)
 k edit deploy <nomDuDeploy>
+
+k rollout status deployment/frontend
+k rollout history deployment/frontend
+k rollout undo deployment/frontend
+
+
+# Exercice configmap (??)
+ubuntu@k8s-carmine-master:~/projet$ cd ..
+ubuntu@k8s-carmine-master:~$ mkdir configmap
+ubuntu@k8s-carmine-master:~$ cd configmap/
+ubuntu@k8s-carmine-master:~/configmap$ mkdir primary
+ubuntu@k8s-carmine-master:~/configmap$ echo c > primary/cyan
+ubuntu@k8s-carmine-master:~/configmap$ echo m > primary/magenta
+ubuntu@k8s-carmine-master:~/configmap$ echo y > primary/yellow
+ubuntu@k8s-carmine-master:~/configmap$ echo k > primary/black
+ubuntu@k8s-carmine-master:~/configmap$ echo "is k" >> primary/black
+ubuntu@k8s-carmine-master:~/configmap$ echo blue > favorite
+
+k create configmap colors --from-literal=text=black --from-file=./favorite --from-file=./primary/
+(affiche: configmap/colors created)
+
+
 ```
