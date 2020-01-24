@@ -55,6 +55,7 @@ k describe deployment hog
 
 k get deployment hog --export -o yaml > hog.yml
 
+
 # "Monitoring"
 (connect to node)
 "htop"

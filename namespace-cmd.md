@@ -23,4 +23,20 @@ k get rs -A
 # Delete le deploy lier au namespace
 k -n <nomDuNamespace> delete deployments.apps <nomDuDeploy>
 
+k create -f <json/yml file>
+k describe rs = k describe replicasets.apps
+k describe rs <nomDuReplicaset>
+k get rs
+k delete rs rs-one --cascade=false
+ --> --cascade=false : conserve les pods créer
+
+k edit po <nomDuPod>
+k edit pod <nomDuPod>
+# isoler le pod pour l'étudier ou travailler dessus sans affecter le reste
+# k delete rs <rs-one> : ne delete pas les pod isolé
+(change labels: system: IsolatedPod)
+k get po -L system
+
+k describe po rs-one-xpcvw | grep Image
+
 ```
