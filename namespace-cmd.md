@@ -71,8 +71,11 @@ ubuntu@k8s-carmine-master:~/configmap$ echo k > primary/black
 ubuntu@k8s-carmine-master:~/configmap$ echo "is k" >> primary/black
 ubuntu@k8s-carmine-master:~/configmap$ echo blue > favorite
 
+# en etant dans le dossier "configmap"
 k create configmap colors --from-literal=text=black --from-file=./favorite --from-file=./primary/
 (affiche: configmap/colors created)
+k get configmaps
+k get configmaps -o yaml
 
 
 ```
