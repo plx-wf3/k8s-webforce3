@@ -80,6 +80,6 @@ k get configmaps -o yaml
 # apres upload du fichier simpleshell.yml
 k create -f shell-demo
 k exec -it shell-demo -- /bin/bash -c 'echo $ilike'
-
+k exec -it shell-demo -- /bin/bash -c 'env'
 
 ```
