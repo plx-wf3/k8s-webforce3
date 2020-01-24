@@ -58,4 +58,6 @@ k get deployment hog --export -o yaml > hog.yml
 # "Monitoring"
 (connect to node)
 "htop"
+# Note !!!!
+!!!!! connect to https for master !!!!!
 ```
