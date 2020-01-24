@@ -39,4 +39,6 @@ k get po -L system
 
 k describe po rs-one-xpcvw | grep Image
 
+rs-one metadata dans le fichier yaml
+ds-one metadata dans le fichier yaml
 ```
