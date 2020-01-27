@@ -71,4 +71,11 @@ k describe crd <nomducrd>
 # ct = crontab
 k get ct
 k describe ct
+
+# Autoriser creation de pods sur le master
+k get node(s)
+k describe node <nodename(master)>
+# find "Taints" info (-i to ignore upper/lowercase)
+k describe node <nodename(master)> | grep -i taints
+k describe node | grep -i taints
 ```
