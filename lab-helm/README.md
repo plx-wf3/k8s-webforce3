@@ -12,7 +12,7 @@
 
 ## ajouter un repo et installer mysql  chart
 ```shell script
-    helm repo add stable https://kubernetes-chart.storage.googleapis.com```
+    helm repo add stable https://kubernetes-charts.storage.googleapis.com```
     helm search repo stable
     helm repo update
     k create -f mysqldb-hostpath.yaml
