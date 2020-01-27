@@ -63,4 +63,12 @@ k get deployment hog --export -o yaml > hog.yml
 "htop"
 # Note !!!!
 !!!!! connect to https for master !!!!!
+
+# Crontab
+# crd = custom resource definition
+k get crd
+k describe crd <nomducrd>
+# ct = crontab
+k get ct
+k describe ct
 ```
