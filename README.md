@@ -47,6 +47,8 @@ k expose deployment nginx --type=LoadBalancer
 k get svc -A
 # Commande recuperation token
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}' )
+# Recuperation info svc
+k get svc <svcname> --export -o yaml > <filename>.yml
 
 
 ## CPU and Limits

@@ -83,4 +83,5 @@ k exec -it shell-demo -- /bin/bash -c 'echo $ilike'
 k exec -it shell-demo -- /bin/bash -c 'env'
 
 k exec -it shell-demo -- /bin/bash -c 'cat /etc/cars/car.model'
+k exec -it shell-demo -- /bin/bash -c 'ls -lrt /etc/cars'
 ```

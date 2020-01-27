@@ -15,13 +15,17 @@
     helm repo add stable https://kubernetes-charts.storage.googleapis.com```
     helm search repo stable
     helm repo update
+    (aller dans le dossier projet puis dossier (lab-)helm)
     k create -f mysqldb-hostpath.yaml
     k get pv
+    (pv : persistentvolume)
+    (pv : definition taille volume)
     k create -f mysqldb-pvc.yaml
     k get pvc
+    (pvc : persistentvolumeclaims)
+    (pvc : assignement à kubernetes)
     helm install  mysql --set mysqlRootPassword=rootpassword,mysqlUser=mysql,mysqlPassword=my-password,mysqlDatabase=mydatabase,persistence.existingClaim=mysql-pvc stable/mysql
     k get pod
-    watch k get pod
     watch kubectl get pod
 ```
 ## mysql admin
