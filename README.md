@@ -78,4 +78,9 @@ k describe node <nodename(master)>
 # find "Taints" info (-i to ignore upper/lowercase)
 k describe node <nodename(master)> | grep -i taints
 k describe node | grep -i taints
+# remove taint from nodes
+# to remove add "-" at the end
+k taint nodes --all node-role.kubernetes.io/master-
+# remove "not-ready" taint from nodes
+k taint nodes --all node.kubernetes.io/not-ready-
 ```
