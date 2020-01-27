@@ -73,6 +73,8 @@ k get ct
 k describe ct
 
 # Autoriser creation de pods sur le master
+# PAS CONSEILLER EN PRODUCTION:  INTERDIT
+# a des fins informative et pour tester chez soi (machines basse ressource)
 k get node(s)
 k describe node <nodename(master)>
 # find "Taints" info (-i to ignore upper/lowercase)
@@ -83,4 +85,7 @@ k describe node | grep -i taints
 k taint nodes --all node-role.kubernetes.io/master-
 # remove "not-ready" taint from nodes
 k taint nodes --all node.kubernetes.io/not-ready-
+# create deployment normalement et P-E que ca le fera sur le master
+# PAS CONSEILLER EN PRODUCTION:  INTERDIT
+
 ```
